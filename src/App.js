@@ -6,6 +6,7 @@ import ProjectDeatails from './components/projects/ProjectDeatails'
 import CreateProject from './components/projects/CreateProject'
 import SignIn from './components/auth/SignIn'
 import SignUp from './components/auth/SignUp'
+
 function App() {
   return (
     <BrowserRouter>

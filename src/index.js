@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore} from 'redux'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import {authReducer} from './components/ReStore/rootReducer'
+const store = createStore(authReducer)
+console.log(store)
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
