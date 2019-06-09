@@ -1,9 +1,17 @@
 import React from 'react'
 import ProjectSummery from './ProjectSummery'
-const ProjectList = () =>{
+const ProjectList = (props) =>{
+    const {projects} = props;
     return (
         <div className="project-list section">
-            <ProjectSummery />
+            {
+                projects && projects.map((project)=>{
+                    return (
+                         <ProjectSummery project={project} key={Math.floor(Math.random()*999)}/>
+                    )
+                })
+            }
+            
         </div>
     )
 }
