@@ -1,8 +1,11 @@
 export const TYPES ={
-    PROJECTS: 'PROJECTS'
+    ADD_PROJECTS: 'ADD_PROJECTS'
 }
-export const projects = (project)=>{
-    return {type:TYPES.PROJECTS, payload:''}
+export const createProjects = (project)=>{
+    return (dispatch,getState) =>{
+        //make a async call
+        dispatch({type:TYPES.ADD_PROJECTS,project})
+        }
 }
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {createProjects} from '../../ReStore/action'
 
 class CreateProject extends React.Component{
    state={
@@ -7,7 +9,7 @@ class CreateProject extends React.Component{
    }
    handleSubmit = (e) =>{
       e.preventDefault();
-      console.log(this.state)
+      this.props.createProjects(this.state)
    }
    handleInputChange = (e)=>{
       this.setState({
@@ -36,6 +38,12 @@ class CreateProject extends React.Component{
    }
 }
 
+const mapDispatchToProps = (dispatch)=>{
+   return (
+      {
+         createProjects : (project)=> dispatch(createProjects(project))
+      }
+   )
+}
 
-
-export default CreateProject;
+export default connect(null,mapDispatchToProps)(CreateProject);
