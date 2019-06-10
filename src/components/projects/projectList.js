@@ -11,7 +11,6 @@ const ProjectList = (props) =>{
                     )
                 })
             }
-            
         </div>
     )
 }
