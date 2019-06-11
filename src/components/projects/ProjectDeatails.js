@@ -9,7 +9,7 @@ const ProjectDeatails = (props) => {
                 <div className="card-content">
                     <span className="card-title">Post Title -{id} </span>
                     <p>
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit Labore eos maxime recusandae, reprehenderit molestias sequi perspiciatis possimus incidunt eaque nulla dolorum ullam id, cupiditate, quas hic molestiae obcaecati enim vitae.
+                       it is just Lorem ipsum dolor sit amet consectetur adipisicing elit Labore eos maxime recusandae, reprehenderit molestias sequi perspiciatis possimus incidunt eaque nulla dolorum ullam id, cupiditate, quas hic molestiae obcaecati enim vitae.
                     </p>
                 </div>
                 <div className="card-action grey lighten-4 grey-text">
