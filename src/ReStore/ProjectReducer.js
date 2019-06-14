@@ -9,7 +9,8 @@ const initState ={
 
 const ProjectReducer = (state = initState,action)=>{
     switch(action.type){
-        case 'ADD_PROJECTS': return {...state,projects: [...state.projects,action.project]}
+        case 'ADD_PROJECTS': return {...state,projects: [...state.projects,action.project]};
+        case 'CREATE_POST_ERROR': console.log('EROOR OCCURERED',action.error)
     }
     return state;
 }
