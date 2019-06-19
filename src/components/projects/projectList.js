@@ -1,5 +1,7 @@
 import React from 'react'
 import ProjectSummery from './ProjectSummery'
+import {Link} from 'react-router-dom'
+
 const ProjectList = (props) =>{
     const {projects} = props;
     return (
@@ -7,11 +9,14 @@ const ProjectList = (props) =>{
             {
                 projects && projects.map((project)=>{
                     return (
-                         <ProjectSummery project={project} key={Math.floor(Math.random()*999)}/>
+                        <Link to={'/post/'+project.id} key={project.id}>
+                         <ProjectSummery project={project} id={project.id}/>
+                        </Link>
                     )
                 })
             }
         </div>
     )
 }
-export default ProjectList;
+
+export default (ProjectList);

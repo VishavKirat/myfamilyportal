@@ -3,7 +3,6 @@ import React from 'react';
 const ProjectSummary = (props) =>{
     const {project} = props;
     return (
-        
         <div className="project-summary card z-depth-0">
             <div className="card-content grey-text text-darken-3">
                 <span className="card-title">{project.title}</span>
