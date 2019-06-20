@@ -1,4 +1,7 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {signIn} from '../../ReStore/authActions'
+
 
 class SignIn extends React.Component{
    state={
@@ -9,7 +12,7 @@ class SignIn extends React.Component{
    passwordRef = React.createRef();
    handleSubmit = (e) =>{
       e.preventDefault();
-      console.log(this.state)
+      this.props.signIn(this.state)
    }
    handleInputChange = (e)=>{
       this.setState({
@@ -30,14 +33,28 @@ class SignIn extends React.Component{
                   <input type="password" id='password' onChange={this.handleInputChange}/>
                </div>
                <div className="input-field">
-               <button className="btn pink light-1 z-depth-1">Submit</button>   
+               <button className="btn pink light-1 z-depth-1">Login</button> 
+               <div className="red-text center">
+                  {this.props.authError ? <p>{this.props.authError}</p>: null}
+                  </div> 
                </div>
+
             </form>
          </div>
       )
    }
 }
+const mapStateToProps = (state)=>{
+   return {
+      authError : state.auth.authError
+   }
+}
 
+const mapDispatchToProps = (dispatch)=>{
+ return (
+    {signIn : (credentials)=> dispatch(signIn(credentials))
+   }
+ )
+}
 
-
-export default SignIn;
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);

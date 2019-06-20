@@ -6,7 +6,7 @@ export const signIn = (credentials)=>{
                     dispatch({type:'LOGIN_SUCCESS'})
                 })
                 .catch((error)=>{
-                    dispatch({type:'LOGIN_ERROR',err})
+                    dispatch({type:'LOGIN_ERROR',error})
                 })
     }
 }
