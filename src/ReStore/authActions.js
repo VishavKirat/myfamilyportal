@@ -10,3 +10,9 @@ export const signIn = (credentials)=>{
                 })
     }
 }
+
+export const signOut = ()=>{
+    return ((dispatch,{getFirebase})=>{
+        const firebse
+    })
+}
