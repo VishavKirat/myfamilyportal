@@ -16,8 +16,9 @@ import fbConfig from './config/fbConfig'
 const logger = createLogger({
     collapsed : true,
 })
-const store = createStore(rootReducer,compose(applyMiddleware(thunk.withExtraArgument({getFirebase,getFirestore}), logger),reactReduxFirebase(fbConfig),reduxFirestore(fbConfig)))
+const store = createStore(rootReducer,compose(applyMiddleware(thunk.withExtraArgument({getFirebase,getFirestore}), logger),reactReduxFirebase(fbConfig,{attachAuthIsReady:true}),reduxFirestore(fbConfig)))
 
-ReactDOM.render(<Provider store={store} ><App /></Provider>, document.getElementById('root'));
-
-serviceWorker.unregister();
+store.firebaseAuthIsReady.then(()=>{
+    ReactDOM.render(<Provider store={store} ><App /></Provider>, document.getElementById('root'));
+    serviceWorker.unregister();
+})
